@@ -44,10 +44,17 @@ app.get('/', function(request, response) {
   
   const odd_row = pattern.filter((thread, index) => index % 2 == 0);
   const even_row = pattern.filter((thread, index) => index % 2 == 1);
-  const rows = odd_row + even_row + odd_row + even_row + odd_row;
+  const rows = [odd_row, even_row, odd_row, even_row, odd_row];
   
   let x = 2;
   let y = hex_width / 2;
+  
+  rows.forEach((row, row_index) => {
+    threads
+  })
+  
+  x = 2;
+  y = hex_width / 2;
   let threads = [];
   odd_row.forEach(thread => {
     threads.push({points: points(x, y), color: thread});
