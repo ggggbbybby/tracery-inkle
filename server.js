@@ -48,14 +48,23 @@ app.get('/', function(request, response) {
   
   let x = 2;
   let y = hex_width / 2;
-  
+  let threads = [];
+  /*
   rows.forEach((row, row_index) => {
-    threads
+    row.forEach(thread => {
+      threads.push({points: points(x,y), color: thread});
+      x += hex_width;
+    })
+    
+    x = row_index % 2 == 0 ? (2 + hex_width) / 2 : 2
+    y = y + hex_height - hex_width / 2;
   })
+  */
+  
   
   x = 2;
   y = hex_width / 2;
-  let threads = [];
+  //let threads = [];
   odd_row.forEach(thread => {
     threads.push({points: points(x, y), color: thread});
     x = x + hex_width;
@@ -89,8 +98,10 @@ app.get('/', function(request, response) {
     x = x + hex_width;
   });
   
+  
   // debug
   console.log(threads);
+  console.log("force refresh");
   
   response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height });
 });
