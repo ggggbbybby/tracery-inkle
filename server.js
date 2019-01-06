@@ -44,14 +44,21 @@ app.get('/', function(request, response) {
   const threads_per_row = Math.ceil(pattern.length / 2);
   const pattern_width = hex_width * threads_per_row;
   const pattern_height = hex_height * num_rows;
-  const rows = [...pattern, ...pattern, ...pattern.slice(0, threads_per_row + 1)];
+  
+  const odd_row = pattern.filter((thread, index) => index % 2 == 0);
+  const even_row = pattern.filter((thread, index) => index % 2 == 1);
+  const rows = odd_row + even_row + odd_row + even_row + odd_row;
+  
+  let x = 0;
+  let y = hex_width / 2;
+  let threads = [];
+  odd_row.forEach((thread, pos) => {
+    
+    threads.push({points: points(x, y), color: thread});
+  });
   
   
-  
-  
-  
-  
-  const threads = [
+  const expected_threads = [
     { points: "2,7 8,1 14,7 14,31 8,37 2,31", color: "Violet" },
     { points: "14,7 20,1 26,7 26,31 20,37 14,31", color: "Indigo" },
     { points: "26,7 32,1 38,7 38,31 32,37 26,31", color: "Indigo" },
