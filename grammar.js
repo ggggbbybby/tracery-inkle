@@ -16,7 +16,7 @@ var dictionary = {
     "#procchain#",
     "#oddSolidA#",
     "#pattern#",
-    "[cAs:#solidA#][cBs:#oddSolidB#]#cAs##cBs##cAs#"
+    "[cAs:#solidA#][cBs:#solidB#]#cAs##cBs##cAs#"
   ],
   "openchain":[
     "[oa:#A#]#oa##oa##B##oa##oa#"
@@ -31,14 +31,11 @@ var dictionary = {
     "[bka:#A#][bkb:#B#]#bka##bkb##bkb##bkb##bka#"
   ],
   "procchain":[
-    "[pcAs:#oddSolidA#][pcb:#B#]#pcAs##pcb##pcAs##pcb##pcAs#",
-    "[pca:#A#][pcBs:#oddSolidB#]#pca##pcBs##pca#"
+    "[pcAs:#solidA#][pcb:#B#]#pcAs##pcb##pcAs##pcb##pcAs#",
+    "[pca:#A#][pcBs:#solidB#]#pca##pcBs##pca#"
   ],
   "oddSolidA":[
     "[X:#A#]#oddSolid#"
-  ],
-  "oddSolidB":[
-    "[X:#B#]#oddSolid#"
   ],
   "solidA":[
     "[X:#A#]#solid#"
