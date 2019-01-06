@@ -26,6 +26,16 @@ app.get('/index', function(request, response) {
 app.get('/', function(request, response) {
   const pattern = grammar.flatten("#origin#");
   
+  const height = 36;
+  const width = 12;
+  const points = (x, y) => (
+    [
+      `${x},${y}`,
+      `${x + 
+    ].join(' ')
+  )
+  
+  
   const threads = [
     { points: "2,7 8,1 14,7 14,31 8,37 2,31", color: "Violet" },
     { points: "14,7 20,1 26,7 26,31 20,37 14,31", color: "Indigo" },
@@ -74,7 +84,7 @@ app.get('/', function(request, response) {
   
   //response.writeHead(200, {"Content-Type": "text/plain"});
   //response.write(pattern);
-  response.render('inkle', { title: 'Hey', pattern: pattern });
+  response.render('inkle', { title: 'Hey', pattern: threads });
 });
 
 
