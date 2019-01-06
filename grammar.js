@@ -15,6 +15,7 @@ var dictionary = {
     "#brokenchain#",
     "#procchain#",
     "#solidA#",
+    "#pattern#",
     "[cAs:#solidA#][cBs:#solidB#]#cAs##cBs##cAs#"
   ],
   "openchain":[
@@ -53,7 +54,32 @@ var dictionary = {
     "Orange",
     "Wheat",
     "\\#202020",
-    "SteelBlue","DodgerBlue","CornflowerBlue","DarkOrchid","Violet","BlueViolet","Indigo","LightSalmon","FireBrick","Crimson","LightSkyBlue","LightYellow","White","Azure","Turquoise","PaleTurquoise","PeachPuff","RosyBrown","LightGreen","LightCyan","Honeydew","SteelBlue","DarkOrange","Olive"]};
+    "SteelBlue",
+    "DodgerBlue",
+    "CornflowerBlue",
+    "DarkOrchid",
+    "Violet",
+    "BlueViolet",
+    "Indigo",
+    "LightSalmon",
+    "FireBrick",
+    "Crimson",
+    "LightSkyBlue",
+    "LightYellow",
+    "White",
+    "Azure",
+    "Turquoise",
+    "PaleTurquoise",
+    "PeachPuff",
+    "RosyBrown",
+    "LightGreen",
+    "LightCyan",
+    "Honeydew",
+    "SteelBlue",
+    "DarkOrange",
+    "Olive"
+  ]
+};
 var tracery = require('tracery-grammar');
 var grammar = tracery.createGrammar(dictionary);
 grammar.addModifiers(tracery.baseEngModifiers);
