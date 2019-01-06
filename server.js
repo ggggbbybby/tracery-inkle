@@ -26,14 +26,29 @@ app.get('/index', function(request, response) {
 app.get('/', function(request, response) {
   const pattern = grammar.flatten("#origin#");
   
-  const height = 36;
-  const width = 12;
+  const num_rows = 5;
+  const hex_height = 36;
+  const hex_width = 12;
+  
   const points = (x, y) => (
     [
       `${x},${y}`,
-      `${x + 
+      `${x + hex_width/2},${y - hex_width/2}`,
+      `${x + hex_width},${y}`,
+      `${x + hex_width},${y + hex_height - hex_width}`,
+      `${x + hex_width/2},${y + hex_height - hex_width/2}`,
+      `${x},${y + hex_height - hex_width}`
     ].join(' ')
   )
+  
+  const threads_per_row = Math.ceil(pattern.length / 2);
+  const pattern_width = hex_width * threads_per_row;
+  const pattern_height = hex_height * num_rows;
+  const rows = [...pattern, ...pattern, ...pattern.slice(0, threads_per_row + 1)];
+  
+  
+  
+  
   
   
   const threads = [
