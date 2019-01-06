@@ -4,8 +4,9 @@ html
   body
     h2 Pattern
     div
-      code= pattern
+      code= JSON.stringify(pattern)
     
-    svg(width="120px" height="180px")
+    <svg width="#{width}px" height="#{height}px">
       each thread in pattern
         <polygon points="#{thread.points}" fill="#{thread.color}" stroke="black") />
+    </svg>

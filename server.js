@@ -24,7 +24,10 @@ app.get('/index', function(request, response) {
 });
 
 app.get('/', function(request, response) {
-  const pattern = grammar.flatten("#origin#");
+  let pattern = grammar.flatten("#origin#")
+  console.log(pattern);
+  pattern = pattern.split(" ");
+  console.log(pattern);
   
   const num_rows = 5;
   const hex_height = 36;
@@ -42,19 +45,26 @@ app.get('/', function(request, response) {
   )
   
   const threads_per_row = Math.ceil(pattern.length / 2);
-  const pattern_width = hex_width * threads_per_row;
+  const pattern_width = 4 + hex_width * threads_per_row;
   const pattern_height = hex_height * num_rows;
   
   const odd_row = pattern.filter((thread, index) => index % 2 == 0);
   const even_row = pattern.filter((thread, index) => index % 2 == 1);
   const rows = odd_row + even_row + odd_row + even_row + odd_row;
   
-  let x = 0;
+  let x = 2;
   let y = hex_width / 2;
   let threads = [];
-  odd_row.forEach((thread, pos) => {
-    
+  odd_row.forEach(thread => {
     threads.push({points: points(x, y), color: thread});
+    x = x + hex_width;
+  });
+  
+  x = 2 + hex_width / 2;
+  y = hex_height;
+  even_row.forEach(thread => {
+    threads.push({points: points(x, y), color: thread});
+    x = x + hex_width;
   });
   
   
@@ -106,7 +116,7 @@ app.get('/', function(request, response) {
   
   //response.writeHead(200, {"Content-Type": "text/plain"});
   //response.write(pattern);
-  response.render('inkle', { title: 'Hey', pattern: threads });
+  response.render('inkle', { title: 'Hey', pattern: threads, width: pattern_width, height: pattern_height });
 });
 
 
