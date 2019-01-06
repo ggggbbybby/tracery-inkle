@@ -3,9 +3,6 @@ html
     title Magic Inkle
   body
     h2 Pattern
-    div
-      code= JSON.stringify(pattern)
-    
     <svg width="#{width}px" height="#{height}px">
       each thread in pattern
         <polygon points="#{thread.points}" fill="#{thread.color}" stroke="black") />
