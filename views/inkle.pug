@@ -1,9 +1,26 @@
 html
   head
     title Magic Inkle
+    <link rel="stylesheet" href="/style.css">
   body
-    h2 Pattern
+    h2 Procedurally Generated Inkle Patterns
     <svg width="#{width}px" height="#{height}px">
       each thread in pattern
-        <polygon points="#{thread.points}" fill="#{thread.color}" stroke="black") />
+        - points = thread.points
+        - fill = thread.color
+        polygon(points=points fill=fill stroke="black")
     </svg>
+    
+    p Take a screenshot to save your pattern.
+    p Refresh the page to generate a new pattern.
+    
+    h2 Credits / Nerd Stuff
+    p The inkle patterns are generated from a grammar built with #[a(href="http://tracery.io/") Tracery
+      | and the inspiration for these came from 
+      a(href="http://aspinnerweaver.blogspot.com/") Annie MacHale
+      | who posts lots of beautifully designed inkle patterns free of charge.
+      
+    p 
+      | The colors used should *mostly* match the 
+      a(href="https://www.etsy.com/listing/509713035/cotton-yarn-omega-sinfonia-for-weaving") Omega Sinfonia yarn
+      | she sells on Etsy.
