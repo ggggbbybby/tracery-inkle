@@ -83,12 +83,11 @@ app.get('/', function(request, response) {
     threads.push({points: points(x, y), color: thread});
     x = x + hex_width;
   });
+  
+  // debug
   console.log(threads);
   
-  
-  //response.writeHead(200, {"Content-Type": "text/plain"});
-  //response.write(pattern);
-  response.render('inkle', { title: 'Hey', pattern: threads, width: pattern_width, height: pattern_height });
+  response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height });
 });
 
 
