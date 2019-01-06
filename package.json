@@ -11,7 +11,8 @@
   },
   "dependencies": {
     "express": "^4.16.4",
-    "tracery-grammar": "^2.7.3"
+    "tracery-grammar": "^2.7.3",
+    "pug": "^2.0.3"
   },
   "engines": {
     "node": "8.x"

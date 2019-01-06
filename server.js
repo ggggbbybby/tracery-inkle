@@ -15,6 +15,9 @@ const grammar = tracery.createGrammar(rules);
 // http://expressjs.com/en/starter/static-files.html
 app.use(express.static('public'));
 
+app.set('views', './views');
+app.set('view engine', 'pug');
+
 // http://expressjs.com/en/starter/basic-routing.html
 app.get('/', function(request, response) {
   response.sendFile(__dirname + '/views/index.html');
@@ -23,9 +26,9 @@ app.get('/', function(request, response) {
 app.get('/api', function(request, response) {
   const pattern = grammar.flatten("#origin#");
   
-  response.writeHead(200, {"Content-Type": "text/plain"});
-  response.write(pattern);
-  response.end();
+  //response.writeHead(200, {"Content-Type": "text/plain"});
+  //response.write(pattern);
+  response.render('inkle', { title: 'Hey', message: 'Hello there!' });
 });
 
 
