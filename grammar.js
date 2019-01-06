@@ -14,7 +14,7 @@ var dictionary = {
     "#blockchain#",
     "#brokenchain#",
     "#procchain#",
-    "#solidA#",
+    "#oddSolidA#",
     "#pattern#",
     "[cAs:#solidA#][cBs:#solidB#]#cAs##cBs##cAs#"
   ],
@@ -34,11 +34,19 @@ var dictionary = {
     "[pcAs:#solidA#][pcb:#B#]#pcAs##pcb##pcAs##pcb##pcAs#",
     "[pca:#A#][pcBs:#solidB#]#pca##pcBs##pca#"
   ],
+  "oddSolidA":[
+    "[X:#A#]#oddSolid#"
+  ],
   "solidA":[
     "[X:#A#]#solid#"
   ],
   "solidB":[
     "[X:#B#]#solid#"
+  ],
+  "oddSolid":[
+    "#X#",
+    "#X##X##X#",
+    "#X##X##X##X##X#"
   ],
   "solid":[
     "#X#",
