@@ -44,43 +44,20 @@ app.get('/', function(request, response) {
   
   const odd_row = pattern.filter((thread, index) => index % 2 == 0);
   const even_row = pattern.filter((thread, index) => index % 2 == 1);
-  const rows = odd_row + even_row + odd_row + even_row + odd_row;
-  
+  const rows = [odd_row, even_row, odd_row, even_row, odd_row];
   let x = 2;
   let y = hex_width / 2;
   let threads = [];
-  odd_row.forEach(thread => {
-    threads.push({points: points(x, y), color: thread});
-    x = x + hex_width;
-  });
   
-  x = 2 + hex_width / 2;
-  y = hex_height;
-  even_row.forEach(thread => {
-    threads.push({points: points(x, y), color: thread});
-    x = x + hex_width;
-  });
-  
-  x = 2;
-  y = y + hex_height - hex_width / 2;
-  odd_row.forEach(thread => {
-    threads.push({points: points(x, y), color: thread});
-    x = x + hex_width;
-  });
-  
-  x = 2 + hex_width / 2;
-  y = y + hex_height - hex_width / 2;
-  even_row.forEach(thread => {
-    threads.push({points: points(x, y), color: thread});
-    x = x + hex_width;
-  });
-  
-  x = 2;
-  y = y + hex_height - hex_width / 2;
-  odd_row.forEach(thread => {
-    threads.push({points: points(x, y), color: thread});
-    x = x + hex_width;
-  });
+  rows.forEach((row, row_index) => {
+    row.forEach(thread => {
+      threads.push({points: points(x, y), color: thread});
+      x += hex_width;
+    })
+    
+    x = (row_index % 2 == 0) ? (2 + hex_width/2) : (2);
+    y += hex_height - hex_width / 2;
+  })
   
   // debug
   console.log(threads);
