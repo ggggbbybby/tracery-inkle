@@ -3,26 +3,14 @@ html
     title Magic Inkle
   body
     h2 Pattern
-    code= pattern
+    div
+      code= pattern
     
     svg(width="120px" height="180px")
-      polygon(points="2,7 8,1 14,7 14,31 8,37 2,31" fill="Violet" stroke="black")
-      polygon(points="14,7 20,1 26,7 26,31 20,37 14,31" fill="Indigo" stroke="black")
-      polygon(points="26,7 32,1 38,7 38,31 32,37 26,31" fill="Indigo" stroke="black")
-      polygon(points="38,7 44,1 50,7 50,31 44,37 38,31" fill="Violet" stroke="black")
-      polygon(points="50,7 56,1 62,7 62,31 56,37 50,31" fill="Indigo" stroke="black")
-      polygon(points="62,7 68,1 74,7 74,31 68,37 62,31" fill="Violet" stroke="black")
-      polygon(points="74,7 80,1 86,7 86,31 80,37 74,31" fill="Indigo" stroke="black")
-      polygon(points="86,7 92,1 98,7 98,31 92,37 86,31" fill="Indigo" stroke="black")
-      polygon(points="98,7 104,1 110,7 110,31 104,37 98,31" fill="Violet#" stroke="black")
-      polygon(points="8,37 14,31 20,37 20,61 14,67 8,61" fill="Indigo" stroke="black")
-      polygon(points="20,37 26,31 32,37 32,61 26,67 20,61" fill="White" stroke="black")
-      polygon(points="32,37 38,31 44,37 44,61 38,67 32,61" fill="Violet" stroke="black")
-      polygon(points="44,37 50,31 56,37 56,61 50,67 44,61" fill="Indigo" stroke="black")
-      polygon(points="56,37 62,31 68,37 68,61 62,67 56,61" fill="Indigo" stroke="black")
-      polygon(points="68,37 74,31 80,37 80,61 74,67 68,61" fill="Violet" stroke="black")
-      polygon(points="80,37 86,31 92,37 92,61 86,67 80,61" fill="White" stroke="black")
-      polygon(points="92,37 98,31 104,37 104,61 98,67 92,61" fill="Indigo" stroke="black")
+      each thread in pattern
+        polygon(points=thread.points fill=thread.color stroke="black")
+        
+    svg(width="120px" height="180px")
       polygon(points="2,67 8,61 14,67 14,91 8,97 2,91" fill="Violet" stroke="black")
       polygon(points="14,67 20,61 26,67 26,91 20,97 14,91" fill="Indigo" stroke="black")
       polygon(points="26,67 32,61 38,67 38,91 32,97 26,91" fill="Indigo" stroke="black")
@@ -31,7 +19,7 @@ html
       polygon(points="62,67 68,61 74,67 74,91 68,97 62,91" fill="Violet" stroke="black")
       polygon(points="74,67 80,61 86,67 86,91 80,97 74,91" fill="Indigo" stroke="black")
       polygon(points="86,67 92,61 98,67 98,91 92,97 86,91" fill="Indigo" stroke="black")
-      polygon(points="98,67 104,61 110,67 110,91 104,97 98,91" fill="Violet#" stroke="black")
+      polygon(points="98,67 104,61 110,67 110,91 104,97 98,91" fill="Violet" stroke="black")
       polygon(points="8,97 14,91 20,97 20,121 14,127 8,121" fill="Indigo" stroke="black")
       polygon(points="20,97 26,91 32,97 32,121 26,127 20,121" fill="White" stroke="black")
       polygon(points="32,97 38,91 44,97 44,121 38,127 32,121" fill="Violet" stroke="black")
@@ -48,4 +36,4 @@ html
       polygon(points="62,127 68,121 74,127 74,151 68,157 62,151" fill="Violet" stroke="black")
       polygon(points="74,127 80,121 86,127 86,151 80,157 74,151" fill="Indigo" stroke="black")
       polygon(points="86,127 92,121 98,127 98,151 92,157 86,151" fill="Indigo" stroke="black")
-      polygon(points="98,127 104,121 110,127 110,151 104,157 98,151" fill="Violet#" stroke="black")
+      polygon(points="98,127 104,121 110,127 110,151 104,157 98,151" fill="Violet" stroke="black")
