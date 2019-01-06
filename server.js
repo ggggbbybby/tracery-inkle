@@ -28,7 +28,7 @@ app.get('/api', function(request, response) {
   
   //response.writeHead(200, {"Content-Type": "text/plain"});
   //response.write(pattern);
-  response.render('inkle', { title: 'Hey', message: 'Hello there!' });
+  response.render('inkle', { title: 'Hey', pattern: pattern });
 });
 
 
