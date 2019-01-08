@@ -11,6 +11,14 @@ html
         polygon(points=points fill=fill stroke="black")
     </svg>
     
+    h3 Colors Used
+    ol
+      each thread_count, color in colors
+        li
+          - style = `height:1rem;width:1rem;background-color:${color};display:inline-block;margin-right:5px;border:1px solid black;`
+          span(style=style)
+          - label = `${color} (${thread_count}x)`
+          = label
     
     
     p Take a screenshot or save this page (right-click, Save as...) to save your pattern.
@@ -31,4 +39,4 @@ html
     <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
     <script src="https://button.glitch.me/button.js"></script>
     
-    p Questions, comments, suggestions, cool pictures of bands you made with this? Email me at #[a(href="mailto:ggggbbybby@gmail.com") ggggbbybby@gmail.com] or find me as #[a(href="https://www.ravelry.com/people/ggggbbybby") ggggbbybby on Ravelry]! 
+    p Questions, comments, suggestions, cool pictures of bands you made with this? Email me at #[a(href="mailto:ggggbbybby@gmail.com") ggggbbybby@gmail.com] or find me on #[a(href="https://www.ravelry.com/people/ggggbbybby") Ravelry]! 

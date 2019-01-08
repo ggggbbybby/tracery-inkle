@@ -42,6 +42,9 @@ app.get('/', function(request, response) {
   const pattern_width = 4 + hex_width * (threads_per_row + 1);
   const pattern_height = hex_height * num_rows;
   
+  const colors = {};
+  pattern.forEach(color => colors[color] = (colors[color] || 0) + 1);
+  
   const odd_row = pattern.filter((thread, index) => index % 2 == 0);
   const even_row = pattern.filter((thread, index) => index % 2 == 1);
   const rows = [odd_row, even_row, odd_row, even_row, odd_row];
@@ -59,10 +62,7 @@ app.get('/', function(request, response) {
     y += hex_height - hex_width / 2;
   })
   
-  // debug
-  console.log(threads);
-  
-  response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height });
+  response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height, colors: colors });
 });
 
 
