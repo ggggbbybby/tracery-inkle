@@ -24,7 +24,7 @@ app.get('/index', function(request, response) {
 app.get('/', function(request, response) {
   const pattern = grammar.flatten("#origin#").trim().split(' ');
   const num_rows = 5;
-  const hex_height = 36;
+  const hex_height = 60;
   const hex_width = hex_height / 3;
   
   const points = (x, y) => (
