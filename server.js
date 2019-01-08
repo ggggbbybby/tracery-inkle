@@ -25,7 +25,7 @@ app.get('/', function(request, response) {
   const pattern = grammar.flatten("#origin#").trim().split(' ');
   const num_rows = 5;
   const hex_height = 36;
-  const hex_width = 12;
+  const hex_width = hex_height / 3;
   
   const points = (x, y) => (
     [
