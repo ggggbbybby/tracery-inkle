@@ -62,7 +62,7 @@ app.get('/', function(request, response) {
     y += hex_height - hex_width / 2;
   })
   
-  response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height, colors: colors });
+  response.render('inkle', { pattern: threads, width: pattern_width, height: pattern_height, colors: colors, flat_pattern: pattern });
 });
 
 
