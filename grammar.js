@@ -1,12 +1,12 @@
 var dictionary = {
   "origin":[
-    "[pad:#solidA#]#pad##pattern##pad#"
+    "#solidA##pattern#"
   ],
   "pattern":[
-    "[pAs:#solidA#][pa:#A#][pBs:#solidB#][pb:#B#]#pAs##pb##pa##pBs##center##pBs##pa##pb##pAs#",
-    "[pAs:#solidA#][pa:#A#][pBs:#solidB#][pb:#B#]#pAs##pb##pa##pb##pa##pBs##center##pBs##pa##pb##pa##pb##pAs#",
-    "[pa:#A#][pb:#B#]#pa##pa##pb##pa##pb##pb##center##pb##pb##pa##pb##pa##pa#",
-    "[pa:#A#][pb:#B#]#pa##pa##pa##pb##pa##pb##pa##pb##pb##pb##center##pb##pb##pb##pa##pb##pa##pb##pa##pa##pa#"
+    "#solidA##B##A##solidB##center#",
+    "[pa:#A#][pb:#B#]#solidA##pb##pa##pb##pa##solidB##center#",
+    "[pa:#A#][pb:#B#]#pa##pa##pb##pa##pb##pb##center#",
+    "[pa:#A#][pb:#B#]#pa##pa##pa##pb##pa##pb##pa##pb##pb##pb##center#"
   ],
   "center":[
     "#openchain#",
@@ -16,7 +16,7 @@ var dictionary = {
     "#procchain#",
     "#oddSolidA#",
     "#pattern#",
-    "[cAs:#solidA#][cBs:#oddSolidB#]#cAs##cBs##cAs#"
+    "#solidA##oddSolidB#"
   ],
   "openchain":[
     "[oa:#A#]#oa##oa##B##oa##oa#"
@@ -32,7 +32,7 @@ var dictionary = {
   ],
   "procchain":[
     "[pcAs:#oddSolidA#][pcb:#B#]#pcAs##pcb##pcAs##pcb##pcAs#",
-    "[pca:#A#][pcBs:#oddSolidB#]#pca##pcBs##pca#"
+    "[pca:#A#]#pca##oddSolidB##pca#"
   ],
   "oddSolidA":[
     "[X:#A#]#oddSolid#"
