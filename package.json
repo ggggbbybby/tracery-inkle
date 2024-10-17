@@ -1,24 +1,15 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "hello-express",
+  "name": "tracery-inkle",
   "version": "0.0.1",
-  "description": "A simple Node app built on Express, instantly up and running.",
+  "description": "an express server that creates procedurally generated inkle loom patterns",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "express": "^4.16.4",
-    "tracery-grammar": "^2.7.3",
-    "pug": "^2.0.3"
-  },
-  "engines": {
-    "node": "8.x"
-  },
-  "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "pug": "^3.0.3",
+    "tracery-grammar": "^2.7.3"
   },
   "license": "MIT",
   "keywords": [
